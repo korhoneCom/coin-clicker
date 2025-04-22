@@ -1,0 +1,15 @@
+{
+    "name": "Coin Clicker",
+    "icons": [ {
+        "src": "assets/star-coin-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    },{
+        "src": "assets/star-coin-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }
+        ],
+    "start_url": "/index.html",
+    "display": "fullscreen"
+}
