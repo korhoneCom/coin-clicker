@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Coin Clicker</string>
+    <string name="title_activity_main">Coin Clicker</string>
+    <string name="package_name">com.korhogames.coinclicker</string>
+    <string name="custom_url_scheme">com.korhogames.coinclicker</string>
+</resources>
