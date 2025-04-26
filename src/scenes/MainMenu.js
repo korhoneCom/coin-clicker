@@ -10,6 +10,8 @@ export class MainMenu extends Scene
             {scene:'Game', text:'Play'},
             {scene:'GameStarCoin', text:'Play Star', seconds:5},
             {scene:'GameStarCoin', text:'Play Star (10s)', seconds:10},
+            {scene:'GameStarCoin', text:'Play Star (10 clicks)', clicks:10},
+            {scene:'GameStarCoin', text:'Play Star (20 clicks)', clicks:20},
             {scene:null, text:'Quit'}
         ];
         this.screenCenter = [this.config.width / 2, this.config.height / 2];
@@ -32,7 +34,8 @@ export class MainMenu extends Scene
                 menuItem.textGO.setStyle({fill: '#fff'});
             });
             menuItem.textGO.on('pointerup', () => {
-                if(menuItem.seconds != 0) {localStorage.setItem('seconds', menuItem.seconds)}
+                if(menuItem.seconds) {localStorage.setItem('gameType','seconds');localStorage.setItem('seconds', menuItem.seconds)}
+                if(menuItem.clicks) {localStorage.setItem('gameType','clicks');localStorage.setItem('clicks', menuItem.clicks)}
                 menuItem.scene && this.scene.start(menuItem.scene);
 
                 if(menuItem.text === 'Quit') {

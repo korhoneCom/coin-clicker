@@ -4,6 +4,7 @@ import { GameOver } from './scenes/GameOver';
 import { GameStarCoin } from './scenes/GameStarCoin';
 import { MainMenu } from './scenes/MainMenu';
 import { Preloader } from './scenes/Preloader';
+import Phaser from 'phaser';
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -35,5 +36,11 @@ const config = {
         new GameOver(SHARED_CONFIG)
     ]
 };
-
-export default new Phaser.Game(config);
+if(import.meta.env.FB_ENV) {
+FBInstant.initializeAsync() 
+  .then(function() {
+    new Phaser.Game(config);
+});
+} else {
+    new Phaser.Game(config);
+}
